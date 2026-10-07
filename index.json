@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "name": "DW3 Mods",
+  "about": "Mod index for the recompiled Digimon World 3 builds (SLES-03936 Europe, SLUS-01436 USA).",
+  "mods": [
+    {
+      "id": "dev.warp-tool",
+      "name": "Warp / Teleport Tool (Fast Travel)",
+      "version": "1.0.1",
+      "type": "plugin",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Open a destination list in the field and teleport to any of 239 field stages.",
+      "default_enabled": false,
+      "package": "mods/dev.warp-tool/1.0.1/dev.warp-tool-1.0.1.zip",
+      "package_sha256": "f1bd6100b0b07c69507198643a6078fc48881bc0b3c8aee5b501343b4c3eae07",
+      "package_size": 18742,
+      "docs": "mods/dev.warp-tool/README.md"
+    }
+  ]
+}

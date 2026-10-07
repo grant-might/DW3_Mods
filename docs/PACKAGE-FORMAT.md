@@ -108,8 +108,12 @@ Two independent things: the package has to be present, and the feature has to
 be enabled.
 
 Install a package file: unpack it so the archive root lands on
-`mods/packages/<id>/<version>/`. A launcher with the mod API calls
-`install(<path to zip>)`, which does the same thing and then re-scans.
+`mods/packages/<id>/<version>/`. The public launcher (DW3 Recompiled+) does
+this for you - **Mods** tab, **Load mod package...**, **Install** - writing the
+files directly, and it switches the package's features on at the same time; use
+its **Disable** / **Enable** buttons from then on. A launcher that links the
+runtime's own mod provider instead calls `install(<path to zip>)`, which does
+the same thing and then re-scans.
 
 Enable or disable a feature through `mods/state.toml`, `format_version = 2`:
 
@@ -150,7 +154,16 @@ start if one is missing:
     cannot launch with selected mods: dev.warp-tool/warp: trusted plugin is unavailable: dev.warp-tool
 
 So a package that ships a `[[plugin]]` needs the plugin linked into the build.
-The relink is incremental and takes seconds when the build tree exists:
+
+**The launcher does this step.** Its Mods tab has **Rebuild (USA)** and
+**Rebuild (EUR)** (disabled until a package is loaded). Pressing the one for
+your region copies the package's `plugin/<name>.c` into that build's plugin
+source folder, adds it to the build with the region define for that disc,
+rebuilds, and replaces the executable. It reuses the launcher's own build path,
+so it needs the same toolchain the Play tab already required, and it is
+incremental - seconds - whenever that build tree already exists.
+
+By hand it is:
 
 1. Copy `plugin/<name>.c` into the build's plugin source folder.
 2. Make the build target compile it, with the region define for the disc:
@@ -166,7 +179,8 @@ with a `[[plugin]]` do.
 
 ## The launcher API
 
-The mod provider on the runtime side exposes, for a launcher to call:
+This is the API the runtime's own mod provider exposes, for a launcher that
+links the provider and calls into it:
 
     install(path)                         install a package ZIP, then re-scan
     feature_enable(package_id, feature_id, 0|1)
@@ -179,3 +193,8 @@ The mod provider on the runtime side exposes, for a launcher to call:
 
 `install` maps to unpacking the archive to `mods/packages/<id>/<version>/` and
 refuses an existing version.
+
+The public launcher (DW3 Recompiled+) is Python and does not link the provider,
+so it does NOT call this API. It implements the same file contract directly:
+unpack the archive, and write `mods/state.toml` in the format above. The two
+routes produce identical files, which is why a build cannot tell them apart.

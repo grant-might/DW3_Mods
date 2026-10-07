@@ -43,17 +43,37 @@ loud line to its log, and disables itself (no list, no game memory writes).
 
 ## Install
 
-Same two halves as any plugin mod on this recomp: the package, and the relink.
-See the [main README](../../README.md) for the full picture, and
-[`docs/PACKAGE-FORMAT.md`](../../docs/PACKAGE-FORMAT.md) for the exact paths.
-Short version:
+Use the launcher. In **DW3 Recompiled+**, open the **Mods** tab, pick your
+build, press **Load mod package...** and choose
+`1.0.1/dev.warp-tool-1.0.1.zip`, press **Install**, then press the rebuild
+button for your region:
+
+- **Rebuild (USA)** for a build made from the USA disc
+- **Rebuild (EUR)** for a build made from the European disc
+
+The rebuild is the code step: Fast Travel is a plugin, so its
+`plugin/warp_tool.c` has to be compiled into that build's executable. It takes
+seconds when that build already exists. Then press Play.
+
+Both rebuild buttons are greyed out until a package is loaded, so you cannot
+press them by mistake.
+
+### Why the rebuild, in one line
+
+The runtime only activates plugin code whose constructor is compiled into the
+executable, so a package alone can add data but not behaviour. The launcher's
+rebuild does the compile and the relink for you.
+
+### By hand, if you are not using the launcher
 
 1. Unpack `1.0.1/dev.warp-tool-1.0.1.zip` so its root lands on
    `<exe dir>/mods/packages/dev.warp-tool/1.0.1/`.
-2. Make sure the build has `plugin/warp_tool.c` compiled in with the right
-   region define, and relink. The two ready-to-launch builds already have this
-   done.
-3. Enable it in `<exe dir>/mods/state.toml`:
+2. Copy `plugin/warp_tool.c` into the build's plugin source folder, make the
+   runtime target compile it with `DW3_GAME_REGION_EU` or `DW3_GAME_REGION_US`
+   for that build's disc, and relink
+   (`cmake --build <build dir> --config Release --parallel`).
+3. Copy the rebuilt executable into the build folder.
+4. Enable it in `<exe dir>/mods/state.toml`:
 
        format_version = 2
 
@@ -67,7 +87,8 @@ Short version:
        enabled = true
 
 Set `enabled = false` to turn it off. With no state file at all it stays off,
-which is the intended default.
+which is the intended default. The two ready-to-launch builds this index was
+made for already have the plugin linked in, so on those the package is enough.
 
 ## Files in the package
 

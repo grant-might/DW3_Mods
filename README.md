@@ -14,61 +14,74 @@ holding the package file and its own notes.
 |---|---|---|---|
 | [Warp / Teleport Tool (Fast Travel)](mods/dev.warp-tool/README.md) | Opens a destination list in the field and teleports you there | `SLES-03936`, `SLUS-01436` | 1.0.1 |
 
-## Read this first: how a mod actually gets onto this recomp
+## Install a mod (the normal way: the launcher does it)
 
-This is the part people get wrong, so it is at the top.
+You need the launcher, **DW3 Recompiled+**, and one build made from your own
+disc for the region you play. Make that build on the launcher's **Play** tab
+first if you have not already.
 
-Installing a mod is two jobs, not one:
+1. Open the launcher and go to the **Mods** tab.
+2. Pick your build at the top: **USA** or **Europe**.
+3. Press **Load mod package...** and pick the package ZIP from this repo
+   (`mods/<id>/<version>/<id>-<version>.zip`). The tab shows what it is: id,
+   version, name, description, the discs it targets and its features.
+4. Press **Install**. That unpacks it into the build and switches its features
+   on.
+5. Press the rebuild button for your region: **Rebuild (USA)** or
+   **Rebuild (EUR)**. This is the step that puts the mod's code into the game,
+   and it is why installing the ZIP alone is not enough (see below).
+6. Press **Play**.
 
-1. **Install the package.** The package is a ZIP. The build keeps it under
-   `mods/packages/<id>/<version>/`, and a small file at `mods/state.toml` says
-   whether the mod's feature is switched on. This half is data only. It is
-   quick and it is reversible.
-2. **Relink.** A mod that changes how the game behaves does it with native
-   code that has to be compiled into the game's executable. The package ships
-   that code as source, and the build compiles it in and links a new
-   executable. This is the relink step.
+Both rebuild buttons stay greyed out until a mod package is loaded, so the tab
+tells you when this step is available.
 
-There is no drop-in option. The runtime only activates plugin code that was
-registered by a constructor compiled into the executable itself. At launch it
-checks the selected packages and refuses to start if one names a plugin the
-executable does not already contain (you get `trusted plugin is unavailable`).
+If that region's build already exists, step 5 is an incremental relink and
+takes **seconds**. If it does not exist yet the tab says so and does nothing,
+and the fix is step 0: build the disc on the Play tab first, which takes 10 to
+20 minutes.
+
+To turn the mod off later, use **Disable** in the same tab (that writes
+`mods/state.toml`); to take it out, press **Remove** and rebuild.
+
+## Why there is a rebuild step, and why the launcher does it
+
+Installing a package and making the mod work are two different jobs, and only
+the first one is a file copy.
+
+- **Install the package.** The package is a ZIP whose root holds
+  `manifest.toml`. The build keeps it under `mods/packages/<id>/<version>/`,
+  and `mods/state.toml` says whether each feature is switched on. This half is
+  data only, quick and reversible.
+- **Relink.** A mod that changes how the game behaves does it with native code
+  that has to be compiled into the game's executable. The package ships that
+  code as source (`plugin/<name>.c`), and the build compiles it in and links a
+  new executable.
+
+There is no drop-in option, by design: the runtime only activates plugin code
+that was registered by a constructor compiled into the executable itself. At
+launch it checks the selected packages and refuses to start if one names a
+plugin the executable does not contain (`trusted plugin is unavailable`).
 There is no loader that can pick a plugin binary out of a package at run time,
 so putting a file next to the game cannot add behaviour.
 
-**How long it takes.** With the build tree already set up, the relink is an
-incremental build and takes seconds, because only the mod's one source file is
-recompiled and the executable is relinked. Building a tree from nothing
-(compiler, CMake, and the game's generated code) takes much longer, up to about
-half an hour.
+That is exactly why the launcher's Mods tab gained the two **Rebuild** buttons:
+the relink is a build step, it is needed once per build, and it is the step no
+player should have to do by hand. The launcher stages the package's source into
+that build, sets the region define for the disc that build was made from,
+rebuilds and relinks with the same build path the Play tab uses, and replaces
+the executable. Everything else in the build folder - your cards, your settings,
+your mods - is left alone.
 
-**What the launcher does.** For a mod package the launcher can install the ZIP
-into `mods/packages/<id>/<version>/`, write `mods/state.toml` when you switch a
-feature on or off, remove a package, and report what it finds. That covers the
-data half.
+A package with no `plugin/` folder is data only (byte patches, disc overlays).
+Those need no rebuild; install and play.
 
-**What the launcher does not do by itself.** The relink. That is a build step,
-needed once per build you want the mod in. The two ready-to-launch builds this
-index was made for already have the Fast Travel plugin linked in, so on those
-builds you only need the data half.
+## The builds this index was made for
 
-### Manual install, step by step
-
-1. Get the package ZIP for the version you want from
-   [`mods/<id>/<version>/`](mods/) in this repo.
-2. Unpack the ZIP so its root lands in the build's mod folder as
-   `mods/packages/<id>/<version>/` (the archive root holds `manifest.toml`).
-   Or let the launcher install the ZIP for you.
-3. Put the package's `plugin/<name>.c` where the build compiles plugin sources
-   from, and make sure the build target includes it with the define for the
-   right region.
-4. Relink (`cmake --build <build dir> --config Release --parallel`).
-5. Copy the rebuilt executable into the build folder, keeping the same
-   executable name so the launcher still finds it.
-6. Enable the feature in `mods/state.toml`.
-
-`docs/PACKAGE-FORMAT.md` has the exact paths, the manifest fields and the state
-file format. Each package also carries an `INSTALL.md` with the same steps.
+Two ready-to-launch builds existed before the launcher could rebuild, and they
+already have the Fast Travel plugin linked in. On those exact builds the
+package alone is enough and the rebuild is a no-op you can skip. On any other
+build, including one you make yourself from your disc, press the rebuild button
+for your region.
 
 ## What a build needs to run a mod
 
@@ -76,11 +89,10 @@ file format. Each package also carries an `INSTALL.md` with the same steps.
   and `SLUS-01436` from one package. A mod carries one address table per region
   and the build picks it with a compile define, so a build for the wrong region
   does not quietly misbehave: the plugin refuses and switches itself off.
-- The build compiled with the mod's plugin linked in (the relink above).
+- The build compiled with the mod's plugin linked in (the rebuild above).
 - The package under `mods/packages/<id>/<version>/`, plus a `mods/state.toml`
   that enables the feature. With no state file at all, features run at their
-  manifest default, which is off for Fast Travel, so a fresh install does
-  nothing until you switch it on.
+  manifest default, which is off for Fast Travel.
 
 ## Repo layout
 
@@ -105,3 +117,23 @@ The list holds 239 destinations: every field stage in the game's own scene
 table, grouped by area (Asuka City, Wire Forest & Coast, Chinlon & Tyranno,
 Suzaku, Byakko, Genbu & Krohn, Magasta, and the Amaterasu alternate maps). The
 header shows your place in the list, for example `7/239`.
+
+## Appendix: installing by hand (no launcher, or an older build)
+
+The launcher is the supported route. Do this only if you are building the game
+yourself or using a build that predates the Mods tab.
+
+1. Get the package ZIP for the version you want from
+   [`mods/<id>/<version>/`](mods/) in this repo.
+2. Unpack the ZIP so its root lands in the build's mod folder as
+   `mods/packages/<id>/<version>/` (the archive root holds `manifest.toml`).
+3. Put the package's `plugin/<name>.c` where the build compiles plugin sources
+   from, and make the build target include it with the define for the right
+   region.
+4. Relink (`cmake --build <build dir> --config Release --parallel`).
+5. Copy the rebuilt executable into the build folder, keeping the same
+   executable name so the launcher still finds it.
+6. Enable the feature in `mods/state.toml`.
+
+`docs/PACKAGE-FORMAT.md` has the exact paths, the manifest fields and the state
+file format. Each package also carries an `INSTALL.md` with the same steps.

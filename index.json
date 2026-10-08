@@ -1,13 +1,14 @@
 {
   "format_version": 1,
   "name": "DW3 Mods",
-  "about": "Mod index for the recompiled Digimon World 3 builds (SLES-03936 Europe, SLUS-01436 USA).",
+  "about": "Mod index for the recompiled Digimon World 3 builds (SLES-03936 Europe, SLUS-01436 USA). Every package covers both builds unless its targets say otherwise.",
   "mods": [
     {
       "id": "dev.warp-tool",
       "name": "Warp / Teleport Tool (Fast Travel)",
       "version": "1.0.1",
       "type": "plugin",
+      "category": "Tools",
       "targets": [
         "SLES-03936",
         "SLUS-01436"
@@ -16,8 +17,8 @@
       "controls": "L2+R2 opens the list; D-pad moves, L1/R1 page, Cross warps, Triangle/Start exits.",
       "default_enabled": false,
       "package": "mods/dev.warp-tool/1.0.1/dev.warp-tool-1.0.1.zip",
-      "package_sha256": "f1bd6100b0b07c69507198643a6078fc48881bc0b3c8aee5b501343b4c3eae07",
-      "package_size": 18742,
+      "package_sha256": "1325ed0e442359ac8006b384d79d6854999174c85f54dfd8017c23076c277ad2",
+      "package_size": 18840,
       "docs": "mods/dev.warp-tool/README.md"
     },
     {
@@ -25,6 +26,7 @@
       "name": "Save Anywhere",
       "version": "1.0.0",
       "type": "plugin",
+      "category": "Tools",
       "targets": [
         "SLES-03936",
         "SLUS-01436"
@@ -33,9 +35,1140 @@
       "controls": "SELECT+SQUARE opens the panel; D-pad picks SAVE GAME / CANCEL, Cross confirms, Triangle/Start exits. Confirming runs the game's own save screen.",
       "default_enabled": false,
       "package": "mods/dev.save-anywhere/1.0.0/dev.save-anywhere-1.0.0.zip",
-      "package_sha256": "0a0a2a2a14178dfef8b93d39a0063368d75b5d510b291465a34f932f0aa5e85d",
-      "package_size": 12022,
+      "package_sha256": "4628ce6380bfeab4c1aeef38f177688d2344191d05261ee024a38356a9991b22",
+      "package_size": 12024,
       "docs": "mods/dev.save-anywhere/README.md"
+    },
+    {
+      "id": "dev.enemy-hp",
+      "name": "Enemy HP in battle",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "HUD",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Draws the enemy's current and max HP on the battle HUD, on the free row under the enemy's HP bar.",
+      "controls": "None in game. Options: y (default 46) the HUD row, right (default 143) the right edge.",
+      "default_enabled": false,
+      "package": "mods/dev.enemy-hp/1.0.0/dev.enemy-hp-1.0.0.zip",
+      "package_sha256": "dfafce70db8a856e9a6a9dfe4ddc2902b15395e46d21c928bafb2eb9bacc501e",
+      "package_size": 11980,
+      "docs": "mods/dev.enemy-hp/README.md"
+    },
+    {
+      "id": "dev.exp-1.2x",
+      "name": "Experience x1.2",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Balance",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Multiplies the EXP a battle awards by 1.2, applied at the reward table so the report, the bar and the level all agree.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "conflicts": [
+        "dev.exp-1.5x",
+        "dev.exp-2x"
+      ],
+      "package": "mods/dev.exp-1.2x/1.0.0/dev.exp-1.2x-1.0.0.zip",
+      "package_sha256": "b887c9399baaf812fed1965f050a591f67f04987b0cd2a81719c9773fd19249c",
+      "package_size": 10078,
+      "docs": "mods/dev.exp-1.2x/README.md"
+    },
+    {
+      "id": "dev.exp-1.5x",
+      "name": "Experience x1.5",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Balance",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Multiplies the EXP a battle awards by 1.5, applied at the reward table so the report, the bar and the level all agree.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "conflicts": [
+        "dev.exp-1.2x",
+        "dev.exp-2x"
+      ],
+      "package": "mods/dev.exp-1.5x/1.0.0/dev.exp-1.5x-1.0.0.zip",
+      "package_sha256": "aa8fc0ecb137be06cf88b4ff8dac9e90c77a6fe3a4035b0122550fb1fdf038d2",
+      "package_size": 10080,
+      "docs": "mods/dev.exp-1.5x/README.md"
+    },
+    {
+      "id": "dev.exp-2x",
+      "name": "Experience x2",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Balance",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Multiplies the EXP a battle awards by 2, applied at the reward table so the report, the bar and the level all agree.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "conflicts": [
+        "dev.exp-1.2x",
+        "dev.exp-1.5x"
+      ],
+      "package": "mods/dev.exp-2x/1.0.0/dev.exp-2x-1.0.0.zip",
+      "package_sha256": "629c1fa6dd5168ae0d6d638f7a88917b9aff0dcd6085aae7cc84285e19ebf3b9",
+      "package_size": 10073,
+      "docs": "mods/dev.exp-2x/README.md"
+    },
+    {
+      "id": "dev.text-speed-2x",
+      "name": "Faster Dialogue Text (2x)",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Text",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Reveals 2 characters per typewriter tick instead of 1: exactly 2x the dialogue text speed, with everything else timed normally.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "conflicts": [
+        "dev.text-speed-4x"
+      ],
+      "package": "mods/dev.text-speed-2x/1.0.0/dev.text-speed-2x-1.0.0.zip",
+      "package_sha256": "68afbe778381e24c0795f0cece07a504efe26f67c83fd574c01d02ab6b65190d",
+      "package_size": 5151,
+      "docs": "mods/dev.text-speed-2x/README.md"
+    },
+    {
+      "id": "dev.text-speed-4x",
+      "name": "Faster Dialogue Text (4x)",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Text",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Reveals 4 characters per typewriter tick instead of 1: exactly 4x the dialogue text speed, with everything else timed normally.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "conflicts": [
+        "dev.text-speed-2x"
+      ],
+      "package": "mods/dev.text-speed-4x/1.0.0/dev.text-speed-4x-1.0.0.zip",
+      "package_sha256": "9f8ae075693eb981f6970da63522d7f5a4123a0a8b47a362b0932ce66bd4e564",
+      "package_size": 5153,
+      "docs": "mods/dev.text-speed-4x/README.md"
+    },
+    {
+      "id": "dev.footstep-major",
+      "name": "Footstep volume 50%",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Audio",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Makes your own footstep sound half as loud. No other sound changes.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "package": "mods/dev.footstep-major/1.0.0/dev.footstep-major-1.0.0.zip",
+      "package_sha256": "148d951479a2eebf4f64760e069dfaf6e52355b922d0b59add6c1078f73cc591",
+      "package_size": 4496,
+      "docs": "mods/dev.footstep-major/README.md"
+    },
+    {
+      "id": "dev.ntsc-60hz",
+      "name": "60 Hz NTSC (Europe)",
+      "version": "1.0.0",
+      "type": "data-patch",
+      "category": "Graphics",
+      "targets": [
+        "SLES-03936"
+      ],
+      "summary": "Runs the European (SLES-03936) build at NTSC timing and removes the 24-line PAL display offset. Data only, no rebuild. Europe only.",
+      "controls": "None. Passive while enabled.",
+      "default_enabled": false,
+      "package": "mods/dev.ntsc-60hz/1.0.0/dev.ntsc-60hz-1.0.0.zip",
+      "package_sha256": "1ca5c8aab98ace1ada92f0bde4b8e1aa4f223da30508455080f72aa2637be200",
+      "package_size": 4538,
+      "docs": "mods/dev.ntsc-60hz/README.md"
+    },
+    {
+      "id": "dev.starter-pack.00",
+      "name": "Kotemon-Kumamon-Monmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Monmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.00/1.0.0/Kotemon-Kumamon-Monmon-pack-1.0.0.zip",
+      "package_sha256": "bd8ff7882ec4338a7870d2780fe9ec6ed9f80d39aaca7c69e06849ca98676c4b",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.01",
+      "name": "Kotemon-Kumamon-Agumon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Agumon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.01/1.0.0/Kotemon-Kumamon-Agumon-pack-1.0.0.zip",
+      "package_sha256": "79269d4b4a702a206d01566aa5e1713aada081b8a72b1edce5c7ca3036f5a432",
+      "package_size": 9355,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.02",
+      "name": "Kotemon-Kumamon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.02/1.0.0/Kotemon-Kumamon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "a48ade49cf9e11bb4904134c38b2abd88454192d0c4b90f06cf683326f19adc6",
+      "package_size": 9336,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.03",
+      "name": "Kotemon-Kumamon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.03/1.0.0/Kotemon-Kumamon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "17bc937c833d1925135bc53f07e914c5078d096fd50904d0fa5a7c367f1c8350",
+      "package_size": 9358,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.04",
+      "name": "Kotemon-Kumamon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.04/1.0.0/Kotemon-Kumamon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "fbceee2eb788c3b4b6f1f829fec1f6caf35777225828f8b013f664a4955a002d",
+      "package_size": 9353,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.05",
+      "name": "Kotemon-Kumamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Kumamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.05/1.0.0/Kotemon-Kumamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "8cd4417e469df4618e41582db47ab3df56acab908da6e018e21e64f243ab9e64",
+      "package_size": 9355,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.06",
+      "name": "Kotemon-Monmon-Agumon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Monmon and Agumon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.06/1.0.0/Kotemon-Monmon-Agumon-pack-1.0.0.zip",
+      "package_sha256": "9b650d633424d8d4860e9466c53e561eb2e49207fa11c05926b58d2472045692",
+      "package_size": 9349,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.07",
+      "name": "Kotemon-Monmon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Monmon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.07/1.0.0/Kotemon-Monmon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "101c16db3100efe38ff7ae35585939543d5daa7e25b72b27376145dc0e586a12",
+      "package_size": 9330,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.08",
+      "name": "Kotemon-Monmon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Monmon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.08/1.0.0/Kotemon-Monmon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "41ba70456673e22c8302f47c133e274d45dd1b1dfc00fa348e368f7cd79045d6",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.09",
+      "name": "Kotemon-Monmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Monmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.09/1.0.0/Kotemon-Monmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "998bc330580231c485baec1aac62d4e633cef576ec4395383c89f94aea9bab1b",
+      "package_size": 9348,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.10",
+      "name": "Kotemon-Monmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Monmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.10/1.0.0/Kotemon-Monmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "62d79fe109c7ee56c9056a4692a6502e85bfe81c8bab7623f240edc6d6c8dbd8",
+      "package_size": 9348,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.11",
+      "name": "Kotemon-Agumon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Agumon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.11/1.0.0/Kotemon-Agumon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "af6f5ec473b1868667e5f49b490655b26cb332433ac2d64d5ef23801347cafdd",
+      "package_size": 9331,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.12",
+      "name": "Kotemon-Agumon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Agumon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.12/1.0.0/Kotemon-Agumon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "4e675aae9005fff95f80e6af4272d5a44d1834009b6936d83780c0e0a05aa02d",
+      "package_size": 9356,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.13",
+      "name": "Kotemon-Agumon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Agumon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.13/1.0.0/Kotemon-Agumon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "ea6ccb85c3f4bdfe7a7c7cde4ea2c30b56ff87cf53db8779008209aba3559566",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.14",
+      "name": "Kotemon-Agumon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Agumon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.14/1.0.0/Kotemon-Agumon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "0bb6f349bcb2c414b385d785e57d7f79106a5f56ceebae20e64ad9301dce4c59",
+      "package_size": 9349,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.15",
+      "name": "Kotemon-Veemon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Veemon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.15/1.0.0/Kotemon-Veemon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "94f7ed20267adf6299a6090d5b71e92ebeb0a0aeee273119667af883b5fe0caa",
+      "package_size": 9334,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.16",
+      "name": "Kotemon-Veemon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Veemon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.16/1.0.0/Kotemon-Veemon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "d6ee7535f0ebc65111768bc46260982ace204716da4043e17a3c68897950c9bc",
+      "package_size": 9329,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.17",
+      "name": "Kotemon-Veemon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Veemon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.17/1.0.0/Kotemon-Veemon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "8c3ae54162c5b6544fe3b5f41067cc21554fbdd631755e7c8956a69e23125838",
+      "package_size": 9330,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.18",
+      "name": "Kotemon-Guilmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Guilmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.18/1.0.0/Kotemon-Guilmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "10e0bca143cc96a6169213d2bb150d7b85796c8038cd1b627365e47e0b81615e",
+      "package_size": 9353,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.19",
+      "name": "Kotemon-Guilmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kotemon, Guilmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.19/1.0.0/Kotemon-Guilmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "9c408b6ed4468f957f86f0a52e5e22ee24d702e7b89d623f4cdbd98e2c0d649e",
+      "package_size": 9354,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.20",
+      "name": "Kumamon-Monmon-Agumon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Monmon and Agumon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.20/1.0.0/Kumamon-Monmon-Agumon-pack-1.0.0.zip",
+      "package_sha256": "dc6a759a2dda2a72f474c5ca31a0a45e4ef08c08830b7b657413bf318caf1a62",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.21",
+      "name": "Kumamon-Monmon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Monmon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.21/1.0.0/Kumamon-Monmon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "0e5fdf7ae9a031882a774dfe7df113ae4a9a78a1d2bfc9d8e87485d3c5c3bc04",
+      "package_size": 9333,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.22",
+      "name": "Kumamon-Monmon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Monmon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.22/1.0.0/Kumamon-Monmon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "0da2fffc4bdf8e5c953ff8afdebf19bf68d29d92685c639250293cdfe2d95a11",
+      "package_size": 9356,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.23",
+      "name": "Kumamon-Monmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Monmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.23/1.0.0/Kumamon-Monmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "1425b2209507a79fa7b9d10bd5cad9c66f664e01be52b8ee481ec662a8fe6293",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.24",
+      "name": "Kumamon-Monmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Monmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.24/1.0.0/Kumamon-Monmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "8a2f876ecaa5fa5400ce7b71ace8a520bdd57c1ec857c39a9379556f98ebb9df",
+      "package_size": 9352,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.25",
+      "name": "Kumamon-Agumon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Agumon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.25/1.0.0/Kumamon-Agumon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "25950b34226530471de59d69b2aaeea0c5ff0d51564e4bd9f866474197be67d5",
+      "package_size": 9334,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.26",
+      "name": "Kumamon-Agumon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Agumon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.26/1.0.0/Kumamon-Agumon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "77cea7ca7a01be8f6fc4bb9b2ae4591fabcd8f297c8753d4da5c75549ae95a9d",
+      "package_size": 9358,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.27",
+      "name": "Kumamon-Agumon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Agumon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.27/1.0.0/Kumamon-Agumon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "72d38681cba939946803279896aa49b57f8a60e1e0408f83ed1b873a4e96b177",
+      "package_size": 9353,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.28",
+      "name": "Kumamon-Agumon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Agumon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.28/1.0.0/Kumamon-Agumon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "01a1396f27072a213c539de045489ae64ff29773b8ec3f543f9c671e3c1d9231",
+      "package_size": 9350,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.29",
+      "name": "Kumamon-Veemon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Veemon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.29/1.0.0/Kumamon-Veemon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "fe7f54e0a043be56e78ae38ae8eec9fb1e422ed35c7a76e3d60a579cdca3b667",
+      "package_size": 9338,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.30",
+      "name": "Kumamon-Veemon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Veemon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.30/1.0.0/Kumamon-Veemon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "d2213cbab9eb4d2e7b55c791b875ff85554ad5a1824b1e548880b7edb887f2b6",
+      "package_size": 9329,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.31",
+      "name": "Kumamon-Veemon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Veemon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.31/1.0.0/Kumamon-Veemon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "a2c057b56298f170de2666e814a0bd3c26efbc8c5ce2984eb84c170631de51e9",
+      "package_size": 9332,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.32",
+      "name": "Kumamon-Guilmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Guilmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.32/1.0.0/Kumamon-Guilmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "95fbbe1f6d63184660376aa731759476d3eb64f5e53c5577fc3749ccc384bf95",
+      "package_size": 9356,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.33",
+      "name": "Kumamon-Renamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Kumamon, Renamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.33/1.0.0/Kumamon-Renamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "8305551a982ff8a3df957a8bdb6d78210515d7fa24b58e049574620630ab0bcb",
+      "package_size": 9350,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.34",
+      "name": "Monmon-Agumon-Veemon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Agumon and Veemon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.34/1.0.0/Monmon-Agumon-Veemon-pack-1.0.0.zip",
+      "package_sha256": "04bd16bbbe3540ba69781b531a1157c006f8c1c937bc4db3f82427893727541b",
+      "package_size": 9327,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.35",
+      "name": "Monmon-Agumon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Agumon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.35/1.0.0/Monmon-Agumon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "aa1b79c542a05570eaf8f0f1144b6eebc2e326789b8e94c07478ae96a2aa7624",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.36",
+      "name": "Monmon-Agumon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Agumon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.36/1.0.0/Monmon-Agumon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "372003dcd1bcd09effe20dc715b01e181b81141ed7cc3b59b48aaf67a72711cb",
+      "package_size": 9344,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.37",
+      "name": "Monmon-Veemon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Veemon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.37/1.0.0/Monmon-Veemon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "6460baadaaf28096b55a230fc5829b3f232817c2cac3e551967463ea85535ba3",
+      "package_size": 9330,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.38",
+      "name": "Monmon-Veemon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Veemon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.38/1.0.0/Monmon-Veemon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "e3396bb7cb4d9f89bf96ab1c774165460896e134d039e8c7cb1a8e9a64b68cc7",
+      "package_size": 9325,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.39",
+      "name": "Monmon-Veemon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Veemon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.39/1.0.0/Monmon-Veemon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "067bd4f30c5b33e55b5f302c1301515cb75e6e99e173c220fd900df64d761650",
+      "package_size": 9326,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.40",
+      "name": "Monmon-Guilmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Guilmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.40/1.0.0/Monmon-Guilmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "882567fe555cd903f0eecca58497d0190e4592bf40645e77883d70a100d27545",
+      "package_size": 9347,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.41",
+      "name": "Monmon-Guilmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Guilmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.41/1.0.0/Monmon-Guilmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "ee4610917c98ee16bc365c90cea7fd5b88a22dafa1e594defdc390bd91fd235f",
+      "package_size": 9350,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.42",
+      "name": "Monmon-Renamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Monmon, Renamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.42/1.0.0/Monmon-Renamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "73c9ea1f8c12bee115102e1d524ebaf9163feb9e0020a44ac561888156d50756",
+      "package_size": 9346,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.43",
+      "name": "Agumon-Veemon-Guilmon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Veemon and Guilmon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.43/1.0.0/Agumon-Veemon-Guilmon-pack-1.0.0.zip",
+      "package_sha256": "3b08c302a5530d6ac754bbae47dc442b3ebf3daa929d76c72ca59b2a49f5aa66",
+      "package_size": 9332,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.44",
+      "name": "Agumon-Veemon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Veemon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.44/1.0.0/Agumon-Veemon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "ffd3845a40f5fc87f7b7ed0943df27a7c81bf2feec3ddf685651a6f9cde6b7b2",
+      "package_size": 9326,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.45",
+      "name": "Agumon-Veemon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Veemon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.45/1.0.0/Agumon-Veemon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "de92099aaf66667e70d2147daa0be026371a22c2d0eb1cce946ccbedf7bb5351",
+      "package_size": 9324,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.46",
+      "name": "Agumon-Guilmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Guilmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.46/1.0.0/Agumon-Guilmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "44c9bba64029a4eefcfe6956522a46c6e50cbd82513925fdd6a67d2f5fee5bfe",
+      "package_size": 9353,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.47",
+      "name": "Agumon-Guilmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Guilmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.47/1.0.0/Agumon-Guilmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "71b7cdb15a04ee21548cdbb21bc8d56fcd1c5cc0eb8020bc71f84af8a6d5b94c",
+      "package_size": 9350,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.48",
+      "name": "Agumon-Renamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Agumon, Renamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.48/1.0.0/Agumon-Renamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "f1403f1b7e37f1f21ed3ffac2b5f72518ad45835ca1a5f36adc69165767ad850",
+      "package_size": 9343,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.49",
+      "name": "Veemon-Guilmon-Renamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Veemon, Guilmon and Renamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.49/1.0.0/Veemon-Guilmon-Renamon-pack-1.0.0.zip",
+      "package_sha256": "6184ff42279a5401c6eb862304f4381f635c8ebb7e7a9b76ae0a1e0c5bc11b3b",
+      "package_size": 9330,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.50",
+      "name": "Veemon-Guilmon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Veemon, Guilmon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.50/1.0.0/Veemon-Guilmon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "62e3bdfa46fffc315d4dc1f1ee45eb5b760f685ededebccfd5cc4a04d3836b16",
+      "package_size": 9330,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.51",
+      "name": "Veemon-Renamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Veemon, Renamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.51/1.0.0/Veemon-Renamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "0f19189ea746c3b0bd0eaebadc6c661ee0962188934c6c15a89301df41cfa789",
+      "package_size": 9325,
+      "docs": "docs/STARTER-PACKS.md"
+    },
+    {
+      "id": "dev.starter-pack.52",
+      "name": "Guilmon-Renamon-Patamon-pack",
+      "version": "1.0.0",
+      "type": "plugin",
+      "category": "Starter Packs",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Starts a new game with Guilmon, Renamon and Patamon, a starting trio the game itself never offers. Apply only one starter pack.",
+      "controls": "None in game. Enable the pack feature of the one pack you want.",
+      "default_enabled": false,
+      "package": "mods/dev.starter-pack.52/1.0.0/Guilmon-Renamon-Patamon-pack-1.0.0.zip",
+      "package_sha256": "1eaff91a11e0d91feae1f7d0066ee558c3352807824fce457d0c0529888c8605",
+      "package_size": 9351,
+      "docs": "docs/STARTER-PACKS.md"
     }
-  ]
+  ],
+  "disc_patch": {
+    "name": "Digimon World 3 (USA) modded disc patch",
+    "version": "1.0.0",
+    "type": "disc-patch",
+    "category": "Disc patch",
+    "targets": [
+      "SLUS-01436"
+    ],
+    "summary": "A .bps patch that turns your own retail USA disc image into the finished six-mod image. Contains no game data and no disc image.",
+    "controls": "None. Apply it to your own retail USA disc with FLIPS.",
+    "file": "disc-patch/DW3-USA-Complete.bps",
+    "file_sha256": "b8b4ec90f4537bea81ff679943bccab99ef3f0112893cf4ccfe38aa9b18b6e65",
+    "file_sha1": "23743657ca467b20f6eb748d627ccbb93fa8398b",
+    "file_size": 31669,
+    "docs": "disc-patch/README.md"
+  }
 }

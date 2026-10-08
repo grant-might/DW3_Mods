@@ -13,6 +13,11 @@ holding the package file and its own notes.
 | Mod | What it does | Targets | Version |
 |---|---|---|---|
 | [Warp / Teleport Tool (Fast Travel)](mods/dev.warp-tool/README.md) | Opens a destination list in the field and teleports you there | `SLES-03936`, `SLUS-01436` | 1.0.1 |
+| [Save Anywhere](mods/dev.save-anywhere/README.md) | Opens a panel in the field that runs the game's own save screen | `SLES-03936`, `SLUS-01436` | 1.0.0 |
+
+The two mods are made to be installed together and never share an input: Fast
+Travel opens on **L2+R2**, Save Anywhere on **SELECT+SQUARE**. While either
+panel is up the field is frozen, so they cannot both open at once.
 
 ## Install a mod (the normal way: the launcher does it)
 
@@ -78,15 +83,15 @@ Those need no rebuild; install and play.
 ## The builds this index was made for
 
 Two ready-to-launch builds existed before the launcher could rebuild, and they
-already have the Fast Travel plugin linked in. On those exact builds the
-package alone is enough and the rebuild is a no-op you can skip. On any other
-build, including one you make yourself from your disc, press the rebuild button
-for your region.
+already have both the Fast Travel and Save Anywhere plugins linked in. On those
+exact builds the packages alone are enough and the rebuild is a no-op you can
+skip. On any other build, including one you make yourself from your disc, press
+the rebuild button for your region.
 
 ## What a build needs to run a mod
 
-- A recompiled build of the right disc. Fast Travel targets both `SLES-03936`
-  and `SLUS-01436` from one package. A mod carries one address table per region
+- A recompiled build of the right disc. Both mods target `SLES-03936` and
+  `SLUS-01436` from one package each. A mod carries one address table per region
   and the build picks it with a compile define, so a build for the wrong region
   does not quietly misbehave: the plugin refuses and switches itself off.
 - The build compiled with the mod's plugin linked in (the rebuild above).
@@ -117,6 +122,27 @@ The list holds 239 destinations: every field stage in the game's own scene
 table, grouped by area (Asuka City, Wire Forest & Coast, Chinlon & Tyranno,
 Suzaku, Byakko, Genbu & Krohn, Magasta, and the Amaterasu alternate maps). The
 header shows your place in the list, for example `7/239`.
+
+## Save Anywhere: how to use it in game
+
+Open the panel in the field (not while a menu or a battle is up) by holding
+**SELECT** and pressing **SQUARE** (keyboard: hold **Right Shift**, press **Z**).
+The field freezes while the panel is up and is put back exactly as it was when
+you close it.
+
+- **D-pad up / down**: move between `SAVE GAME` and `CANCEL`
+- **Cross**: confirm the highlighted row
+- **Triangle or Start**: close the panel and stay where you are
+
+Choosing **SAVE GAME** opens the **game's own memory-card save screen** - the
+real slot picker and the real card write, not a rebuilt one. Pick a slot and
+confirm there just as you would at a save point, and the game writes the file
+itself; you then come back to the field where you were standing. The panel
+itself is only the two-row opener; the screen that saves is the game's.
+
+Save Anywhere and Fast Travel do not collide: Fast Travel opens on **L2+R2**,
+Save Anywhere on **SELECT+SQUARE**, and either way the field is frozen while a
+panel is up, so the two cannot open at the same moment.
 
 ## Appendix: installing by hand (no launcher, or an older build)
 

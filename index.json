@@ -13,11 +13,29 @@
         "SLUS-01436"
       ],
       "summary": "Open a destination list in the field and teleport to any of 239 field stages.",
+      "controls": "L2+R2 opens the list; D-pad moves, L1/R1 page, Cross warps, Triangle/Start exits.",
       "default_enabled": false,
       "package": "mods/dev.warp-tool/1.0.1/dev.warp-tool-1.0.1.zip",
       "package_sha256": "f1bd6100b0b07c69507198643a6078fc48881bc0b3c8aee5b501343b4c3eae07",
       "package_size": 18742,
       "docs": "mods/dev.warp-tool/README.md"
+    },
+    {
+      "id": "dev.save-anywhere",
+      "name": "Save Anywhere",
+      "version": "1.0.0",
+      "type": "plugin",
+      "targets": [
+        "SLES-03936",
+        "SLUS-01436"
+      ],
+      "summary": "Open a Save Anywhere panel in the field with SELECT+SQUARE and save using the game's own memory-card screen.",
+      "controls": "SELECT+SQUARE opens the panel; D-pad picks SAVE GAME / CANCEL, Cross confirms, Triangle/Start exits. Confirming runs the game's own save screen.",
+      "default_enabled": false,
+      "package": "mods/dev.save-anywhere/1.0.0/dev.save-anywhere-1.0.0.zip",
+      "package_sha256": "0a0a2a2a14178dfef8b93d39a0063368d75b5d510b291465a34f932f0aa5e85d",
+      "package_size": 12022,
+      "docs": "mods/dev.save-anywhere/README.md"
     }
   ]
 }

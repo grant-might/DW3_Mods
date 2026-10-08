@@ -97,7 +97,7 @@ the rebuild button for your region.
 - The build compiled with the mod's plugin linked in (the rebuild above).
 - The package under `mods/packages/<id>/<version>/`, plus a `mods/state.toml`
   that enables the feature. With no state file at all, features run at their
-  manifest default, which is off for Fast Travel.
+  manifest default, which is off for both mods.
 
 ## Repo layout
 
@@ -139,6 +139,18 @@ real slot picker and the real card write, not a rebuilt one. Pick a slot and
 confirm there just as you would at a save point, and the game writes the file
 itself; you then come back to the field where you were standing. The panel
 itself is only the two-row opener; the screen that saves is the game's.
+
+In that screen the buttons are the game's own, so they work exactly as they
+do at a save point:
+
+- **Cross**: the slot, then the save row, then confirm the overwrite, then
+  dismiss the confirmation
+- **Triangle**: leave the screen, which puts you back in the field where you
+  were standing
+
+If the panel does not open, you are not standing in a plain field. It refuses
+in a menu, in a battle, in a cutscene and mid-transition, and waits until the
+field is live and idle.
 
 Save Anywhere and Fast Travel do not collide: Fast Travel opens on **L2+R2**,
 Save Anywhere on **SELECT+SQUARE**, and either way the field is frozen while a

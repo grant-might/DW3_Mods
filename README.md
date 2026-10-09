@@ -4,6 +4,8 @@ A mod index for the recompiled Digimon World 3 builds. The two builds this
 index covers are the Europe release (disc id `SLES-03936`) and the USA release
 (disc id `SLUS-01436`).
 
+Join our discord server for community forum, assistance, to make suggestions, etc. https://discord.gg/rJv3uVsgx
+
 Every mod here is a package a build can install. The packages are listed in
 [`index.json`](index.json), and each one has a folder under [`mods/`](mods/)
 holding the package file and its own notes.
